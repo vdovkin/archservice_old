@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Орієнтовний підбір балок</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- font awesome -->
+    <script
+      src="https://kit.fontawesome.com/5de3e67cfc.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <!-- header section -->
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark">
+        <div class="container">
+          <div class="navbar-brand mr-4">
+            <a href="/index.html">
+              <img src="/img/logo.png" alt="logo" />
+            </a>
+          </div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarToggle"
+            aria-controls="navbarToggle"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarToggle">
+            <!-- Navbar Right Side -->
+            <div class="navbar-nav ml-auto">
+              <a class="nav-item nav-link" href="/index.html">Головна</a>
+              <a class="nav-item nav-link" href="/about.html">Про сервіс</a>
+              <a class="nav-item nav-link" href="/questions.html"
+                >Задати питання</a
+              >
+              <a class="nav-item nav-link" href="https://uscc.ua/">Сайт УЦСБ</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Page Content -->
+    <div class="container">
+      <!-- HEADER -->
+      <div class="row align-items-center">
+        <div class="col-sm-12 text-center">
+          <h2 class="my-5">
+            Орієнтовний підбір параметрів перекриття сталевого каркасу
+          </h2>
+        </div>
+      </div>
+      <!-- END HEADER -->
+
+      <!-- MAIN BLCOK -->
+      <div class="row align-items-center">
+        <div class="col-md-4">
+          <img id="MainImage" class="img-fluid" src="/img/shema.jpg" alt="" />
+        </div>
+
+        <div class="col-md-4">
+          <div class="beamform">
+            <div class="form-element">
+              <label for="grid">Сітка колон, м</label>
+              <select id="grid">
+                <option value="1">5,5x15</option>
+                <option value="2">6х6</option>
+                <option value="3">6х9</option>
+                <option value="4">6х12</option>
+                <option value="5">6х18</option>
+                <option value="6" selected>8,4х8,4</option>
+                <option value="7">8,4х16,8</option>
+                <option value="9">9х9</option>
+              </select>
+            </div>
+            <div class="form-check checkbox">
+              <input type="checkbox" id="exampleCheck1" />
+              <label class="form-check-label" for="exampleCheck1"
+                >Задати свою</label
+              >
+            </div>
+            <div class="form-element mainfield">
+              <label for="load1">Навантаження за типом будівлі</label>
+              <select id="load2">
+                <option value="1">ТРЦ (400 кг/м<sup>2</sup>)</option>
+                <option value="2">Офіси (250 кг/м<sup>2</sup>)</option>
+              </select>
+            </div>
+            <div class="form-element mainfield">
+              <label for="load1">Тип чистової підлоги</label>
+              <select id="load2">
+                <option value="1">
+                  Керамогранітна плитка поверх цементно-піщаної стяжки (90
+                  кг/м<sup>2)</sup>
+                </option>
+                <option value="2">Наливна підлога,</option>
+              </select>
+            </div>
+            <button class="btn-orange my-4">Підібрати</button>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="instructions">
+            <h5 class="text-center">Як користуватися сервісом?</h5>
+            <ol>
+              <li>
+                <b>Виберіть сітку колон</b>
+                <div class="note">
+                  Якщо вашого випадку немає у переліку ви можете задати її
+                  вручну натиснувши на відповідну кнопку
+                </div>
+              </li>
+              <li>
+                <b>Виберіть навантаження відповідно до типу будівлі.</b>
+                <div class="note">
+                  Якщо вашого випадку немає у переліку виберіть найбільш схожий
+                  за навантаженням
+                </div>
+              </li>
+              <li>
+                <b>Виберіть тип чистової підлоги</b>
+                <div class="note">
+                  Якщо вашого випадку немає у переліку виберіть найбільш схожий
+                  за навантаженням
+                </div>
+              </li>
+              <li><b>Натисніть "підібрати"</b></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <!-- END MAIN BLCOK -->
+    </div>
+    <!-- END PAGE Content -->
+
+    <!-- JS scripts -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/js/main.js"></script>
+  </body>
+</html>
