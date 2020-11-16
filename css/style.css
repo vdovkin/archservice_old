@@ -66,6 +66,14 @@ ul {
   background-color: #294063;
 }
 
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
 .navbar {
   background-color: #536279;
   font-size: 16px;
@@ -270,4 +278,48 @@ ul {
   text-align: left;
   color: #3f5968;
   font-size: 14px;
+}
+
+.names {
+  font-weight: 800;
+  color: #294063;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+hr {
+  border-top: 4px solid #294063;
+  border-radius: 3px;
+}
+
+.resulttable {
+  text-align: center;
+}
+
+.resulttable table {
+  width: 100%;
+  height: 300px;
+}
+
+.resulttable th,
+.resulttable td {
+  border: 2px solid #294063;
+}
+
+.comunications {
+  text-align: center;
+}
+
+.resutsbtn {
+  margin-bottom: 80px;
+  margin-top: 50px;
+}
+
+.resutsbtn button {
+  margin: 0 30px;
+}
+
+#flaps {
+  width: 80%;
 }

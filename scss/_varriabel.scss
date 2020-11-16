@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,200i,300,300i,400,400i,500,500i,600,600i,700&display=swap");
+
+$font: "Poppins", sans-serif;
+
+$color1: #536279;
+$color2: #f89c49;
+$color3: #294063;
+$color4: #e0e9ee;
+$color5: #3f5968;
+$color6: #dfdfdf;
+$error_color: #e74c3c;
+$success_color: #2ecc71;
+
+$large_device: "(min-width: 1025px)";
+$mid_device: "(min-width: 992px) and (max-width: 1200px)";
+$tablet_device: "(min-width: 768px) and (max-width: 991px)";
+$large_mobile: "only screen and (min-width: 480px) and (max-width: 767px)";
+$mobile_device: "only screen and (max-width: 479px)";
