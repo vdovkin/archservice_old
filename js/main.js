@@ -1,4 +1,4 @@
-const form = document.getElementById("form");
+const mainForm = document.getElementById("mainForm");
 const checkBox = document.getElementById("customgrid");
 const lenghtblock = document.getElementById("lenghtblock");
 const stepblock = document.getElementById("stepblock");

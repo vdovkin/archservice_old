@@ -82,7 +82,7 @@
         </div>
 
         <div class="col-md-4">
-          <div class="beamform" id="form">
+          <div class="beamform" id="mainForm">
             <div class="form-element" id="grid">
               <label for="grid">Сітка колон (L x B), м</label>
               <select id="grid">
@@ -109,10 +109,12 @@
             <div class="form-element mainfield hide" id="lenghtblock">
               <label for="lenght">Довжина (L), м</label>
               <input type="number" id="lenght" min="3" max="24" value="9" />
+              <small>Error message</small>
             </div>
             <div class="form-element mainfield hide" id="stepblock">
               <label for="step">Ширина (В), м</label>
               <input type="number" id="step" min="3" max="24" value="9" />
+              <small>Error message</small>
             </div>
             <div class="form-element mainfield">
               <label for="load1">Навантаження за типом будівлі</label>
