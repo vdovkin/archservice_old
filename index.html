@@ -80,7 +80,7 @@
         </div>
 
         <div class="col-md-4">
-          <div class="beamform" id="mainForm">
+          <form class="beamform" id="mainForm">
             <div class="form-element" id="grid">
               <label for="grid">Сітка колон (L x B), м</label>
               <select id="grid">
@@ -94,27 +94,28 @@
                 <option value="9х9">9х9</option>
               </select>
             </div>
-            <div class="form-check checkbox">
-              <input
-                type="checkbox"
-                id="customgrid"
-                onclick="showGridSelection()"
-              />
-              <label class="form-check-label" for="customgrid"
-                >Задати свою сітку колон</label
-              >
+            <div>
+              <div class="inputGroup">
+                <input
+                  id="customgrid"
+                  type="checkbox"
+                  onclick="showGridSelection()"
+                />
+                <label for="customgrid">Задати свою сітку колон</label>
+              </div>
             </div>
-            <div class="form-element mainfield hide" id="lenghtblock">
+
+            <div class="form-element hide" id="lenghtblock">
               <label for="lenght">Довжина (L), м</label>
-              <input type="number" id="lenght" min="3" max="24" value="9" />
+              <input type="number" id="lenght" value="9" />
               <small>Error message</small>
             </div>
-            <div class="form-element mainfield hide" id="stepblock">
+            <div class="form-element hide" id="stepblock">
               <label for="step">Ширина (В), м</label>
-              <input type="number" id="step" min="3" max="24" value="9" />
+              <input type="number" id="step" value="9" />
               <small>Error message</small>
             </div>
-            <div class="form-element mainfield">
+            <div class="form-element">
               <label for="load1">Навантаження за типом будівлі</label>
               <select id="load1">
                 <option value="200">
@@ -133,7 +134,7 @@
                 </option>
               </select>
             </div>
-            <div class="form-element mainfield">
+            <div class="form-element">
               <label for="load2">Тип чистової підлоги</label>
               <select id="load2">
                 <option value="90">
@@ -152,11 +153,10 @@
                 </option>
               </select>
             </div>
-            <a href="results.html"
-              ><button class="btn-orange my-4" onclick="saveValues()">
-                Підібрати
-              </button></a
-            >
+            <button class="btn-orange my-4">Підібрати</button>
+          </form>
+          <div id="resultLink" class="hide">
+            <a href="results.html">Перейти до результатів -></a>
           </div>
         </div>
 

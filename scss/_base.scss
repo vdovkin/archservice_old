@@ -61,14 +61,15 @@ ul {
 
 .btn-orange:hover {
   text-decoration: none;
+  outline: none;
   color: $color2;
   background-color: $color3;
 }
 
-.hide {
-  display: none;
+.btn-orange:focus {
+  outline: none;
 }
 
-.show {
-  display: block;
+input[type="checkbox"] {
+  visibility: hidden;
 }
