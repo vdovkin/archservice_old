@@ -372,6 +372,8 @@ input[type="checkbox"] {
   padding: 10px 10px;
   border-radius: 20px;
   background-color: #e0e9ee;
+  -webkit-box-shadow: 2px 2px 5px #294063;
+          box-shadow: 2px 2px 5px #294063;
   font-size: 14px;
 }
 
