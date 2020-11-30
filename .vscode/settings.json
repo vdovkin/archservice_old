@@ -1,4 +1,11 @@
 {
-    "liveServer.settings.port": 5502,
-    "python.pythonPath": "venv\\Scripts\\python.exe"
+  "liveServer.settings.port": 5502,
+  "python.pythonPath": "venv\\Scripts\\python.exe",
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "/archservice/static/css"
+    }
+  ]
 }
