@@ -5,12 +5,6 @@ const stepblock = document.getElementById("stepblock");
 const grid = document.getElementById("grid");
 const lenght = document.getElementById("lenght");
 const step = document.getElementById("step");
-const resultLink = document.getElementById("resultLink");
-
-//to results page
-function toResults() {
-  resultLink.className = "show";
-}
 
 //Show input error mesage
 function showError(input, message) {
@@ -53,27 +47,35 @@ function checkRequired(inputArr) {
   return isRequired;
 }
 
-// Check values
-function checkValues(input, min, max) {
+// validate values
+function invalidValues(input, min, max) {
+  let invalid = true;
   if (parseFloat(input.value) < min) {
     showError(input, `Маэ бути більше за ${min} м.`);
   } else if (parseFloat(input.value) > max) {
-    showError(input, `Маэ бути ьенше за ${max} м.`);
+    showError(input, `Маэ бути менше за ${max} м.`);
   } else {
     showSuccess(input);
+    invalid = false;
   }
+  return invalid;
 }
 
-//Event listeners
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
-
+function validateForm() {
   if (checkBox.checked === true) {
-    if (!checkRequired([lenght, step])) {
-      checkValues(lenght, 3, 24);
-      checkValues(step, 3, 24);
+    if (checkRequired([lenght, step])) {
+      return false;
     }
-  }
 
-  toResults();
-});
+    let arrValuesCheck = [
+      invalidValues(lenght, 3, 24),
+      invalidValues(step, 3, 24),
+    ];
+
+    let validation = arrValuesCheck.every(function (result) {
+      return result == false;
+    });
+
+    return validation;
+  }
+}

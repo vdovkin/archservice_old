@@ -4,6 +4,9 @@
 ### virtual environment ###
 venv
 
+### my files ###
+old
+
 ### Django ###
 *.log
 *.pot

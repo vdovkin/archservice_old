@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+<!-- Main content -->
+{% block content %}
+ <!-- Page Content -->
+ <div class="container">
+    <!-- HEADER -->
+    <div class="row align-items-center">
+      <div class="col-sm-12 text-center">
+        <h2 class="my-5">Результати підбору</h2>
+      </div>
+    </div>
+    <!-- END HEADER -->
+
+    <!-- MAIN BLCOK -->
+    <div class="row">
+      <div class="col-md-6">
+        <div class="names">
+          <h4>3D схема перекриття</h4>
+        </div>
+
+        <img class="img-fluid" src="{% static 'img/floor.jpg' %}" alt="" />
+      </div>
+
+      <div class="col-md-6">
+        <div class="resulttable">
+          <div class="names">
+            <h4>Таблиця висот елементів перекриття</h4>
+          </div>
+          <table>
+            <tr>
+              <th>Позначення</th>
+              <th>Елемент</th>
+              <th>Висота, мм</th>
+            </tr>
+            <tr>
+              <td>H<sub>г.б</sub></td>
+              <td>Головна балка</td>
+              <td>600</td>
+            </tr>
+            <tr>
+              <td>H<sub>д.б</sub></td>
+              <td>Другорядна балка</td>
+              <td>360</td>
+            </tr>
+            <tr>
+              <td>h<sub>пр</sub></td>
+              <td>Профлист</td>
+              <td>60</td>
+            </tr>
+            <tr>
+              <td>h <sub>пл</sub></td>
+              <td>Монолітна плита</td>
+              <td>130</td>
+            </tr>
+            <tr>
+              <td>H<sub>заг.</sub></td>
+              <td>Все перекриття</td>
+              <td>730</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="names">
+          <h4>Типовий вузол перекриття</h4>
+        </div>
+        <img class="img-fluid" src="{% static 'img/floor2.jpg' %}" alt="" />
+      </div>
+
+      <div class="col-md-6">
+        <div class="names">
+          <h4>Габарити перфорацій</h4>
+        </div>
+        <div class="comunications">
+          <p>
+            Максимальний габарит отвору під комунікації, що можливо пропустити крізь
+            головну балку
+          </p>
+          <b>400х600</b>мм
+          <img id='flaps' class="img-fluid" src="{% static 'img/flaps.png' %}" alt="" />
+        </div>
+
+        
+      </div>
+    </div>
+
+    <div class="row align-items-center">
+      <div class="col-sm-12 text-center">
+        <div class="resutsbtn">
+          <a href="{% url 'index' %}"
+          ><button class="btn-orange">Змінити параметри</button></a
+        >
+      
+      
+        <button class="btn-orange">Сформувати звіт</button>
+      
+      <a href="{% url 'contacts' %}"
+        ><button class="btn-orange">Задати питання</button></a
+      >
+        </div>
+          
+
+          
+        </div>
+      </div>
+    </div>
+    <!-- END HEADER -->
+
+    <!-- MAIN BLCOK -->
+
+    <!-- END MAIN BLCOK -->
+  </div>
+  <!-- END PAGE Content -->
+{% endblock%}

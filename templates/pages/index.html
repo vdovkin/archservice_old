@@ -1,6 +1,137 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% load static %}
 
 <!-- Main content -->
-{% block contet %}
-<h1>Home</h1>
-{% endblock%}
+{% block content %}
+
+<!-- Page Content -->
+<div class="container">
+  <!-- HEADER -->
+  <div class="row align-items-center">
+    <div class="col-sm-12 text-center">
+      <h2 class="my-5">
+        Орієнтовний підбір параметрів перекриття сталевого каркасу
+      </h2>
+    </div>
+  </div>
+  <!-- END HEADER -->
+
+  <!-- MAIN BLCOK -->
+  <div class="row align-items-center">
+    <div class="col-md-4">
+      <img
+        id="MainImage"
+        class="img-fluid"
+        src="{% static 'img/shema.jpg' %}"
+        alt=""
+      />
+    </div>
+
+    <div class="col-md-4">
+      <form
+        class="beamform"
+        id="mainForm"
+        action="{% url 'results'%}"
+        onsubmit="return validateForm()"
+      >
+        <div class="form-element" id="grid">
+          <label for="grid">Сітка колон (L x B), м</label>
+          <select id="grid">
+            {% for key, value in grid_choices.items %}
+            <!-- defaul value -->
+            {% if key == selected_choices.grid %}
+            <option value="{{key}}" selected>{{value}}</option>
+            {% else %}
+            <option value="{{key}}">{{value}} {% endif %} {% endfor %}</option>
+          </select>
+        </div>
+        <div>
+          <div class="inputGroup">
+            <input
+              id="customgrid"
+              type="checkbox"
+              onclick="showGridSelection()"
+            />
+            <label for="customgrid">Задати свою сітку колон</label>
+          </div>
+        </div>
+
+        <div class="form-element hide" id="lenghtblock">
+          <label for="lenght">Довжина (L), м</label>
+          <input type="number" id="lenght" value="9" />
+          <small>Error message</small>
+        </div>
+        <div class="form-element hide" id="stepblock">
+          <label for="step">Ширина (В), м</label>
+          <input type="number" id="step" value="9" />
+          <small>Error message</small>
+        </div>
+        <div class="form-element">
+          <label for="load1">Навантаження за типом будівлі</label>
+          <select id="load1">
+            {% for key, value in load1_choices.items %}
+            <!-- defaul value -->
+            {% if key == selected_choices.load1 %}
+            <option value="{{key}}" selected>
+              {{value}} ({{key}} кг/м&sup2;)
+            </option>
+            {% else %}
+            <option value="{{key}}">{{value}} ({{key}} кг/м&sup2;)</option>
+            {% endif %} {% endfor %}
+          </select>
+        </div>
+        <div class="form-element">
+          <label for="load2">Тип чистової підлоги</label>
+          <select id="load2">
+            {% for key, value in load2_choices.items %}
+            <!-- defaul value -->
+            {% if key == selected_choices.load2 %}
+            <option value="{{key}}" selected>
+              {{value}} ({{key}} кг/м&sup2;)
+            </option>
+            {% else %}
+            <option value="{{key}}">{{value}} ({{key}} кг/м&sup2;)</option>
+            {% endif %} {% endfor %}
+          </select>
+        </div>
+        <button class="btn-orange my-4">Підібрати</button>
+      </form>
+    </div>
+
+    <div class="col-md-4">
+      <div class="instructions">
+        <h5 class="text-center">Як користуватися сервісом?</h5>
+        <ol>
+          <li>
+            <b>Виберіть сітку колон</b>
+            <div class="note">
+              Якщо вашого випадку немає у переліку ви можете задати її вручну
+              натиснувши на відповідну кнопку
+            </div>
+          </li>
+          <li>
+            <b>Виберіть навантаження відповідно до типу будівлі.</b>
+            <div class="note">
+              Якщо вашого випадку немає у переліку виберіть найбільш схожий за
+              навантаженням
+            </div>
+          </li>
+          <li>
+            <b>Виберіть тип чистової підлоги</b>
+            <div class="note">
+              Якщо вашого випадку немає у переліку виберіть найбільш схожий за
+              навантаженням
+            </div>
+          </li>
+          <li><b>Натисніть "підібрати"</b></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <!-- END MAIN BLCOK -->
+</div>
+<!-- END PAGE Content -->
+
+<!-- scripts -->
+<script src="{% static 'js/main.js' %}"></script>
+
+{% endblock %}

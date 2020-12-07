@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -13,7 +15,11 @@
       crossorigin="anonymous"
     ></script>
 
-    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="{% static 'img/favicon.png' %}"
+    />
 
     <!-- Bootstrap CSS -->
     <link
@@ -24,43 +30,14 @@
     />
 
     <!-- Main css -->
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
   </head>
 
   <body>
     <!-- header section -->
-    <header>
-      <nav class="navbar navbar-expand-md navbar-dark">
-        <div class="container">
-          <div class="navbar-brand mr-4">
-            <a href="index.html">
-              <img src="img/logo.png" alt="logo" />
-            </a>
-          </div>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarToggle"
-            aria-controls="navbarToggle"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarToggle">
-            <!-- Navbar Right Side -->
-            <div class="navbar-nav ml-auto">
-              <a class="nav-item nav-link" href="index.html">Головна</a>
-              <a class="nav-item nav-link" href="about.html">Про сервіс</a>
-              <a class="nav-item nav-link" href="contacts.html">Контакти</a>
-              <a class="nav-item nav-link" href="https://uscc.ua/">Сайт УЦСБ</a>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </header>
+    <header>{% include 'partials/_navbar.html'%}</header>
 
+    <!-- Main content -->
     {% block content %} {% endblock %}
 
     <!-- JS scripts -->
@@ -79,6 +56,5 @@
       integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
       crossorigin="anonymous"
     ></script>
-    <script src="js/main.js"></script>
   </body>
 </html>

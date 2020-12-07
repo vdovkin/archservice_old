@@ -33,6 +33,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     "pages.apps.PagesConfig",
+    "calculations.apps.CalculationsConfig",
+    "user_request.apps.UserRequestConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -121,4 +123,4 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATIC_URL = "/static/"
-SRATICFIELS_DIRS = [os.path.join(BASE_DIR, "archservice/static")]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "archservice/static")]
