@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from user_request.choices import (
     grid_choices,
@@ -28,4 +28,7 @@ def contacts(request):
 
 
 def results(request):
-    return render(request, "pages/results.html")
+    if request.method == "POST":
+        return render(request, "pages/results.html")
+    else:
+        return redirect("index")

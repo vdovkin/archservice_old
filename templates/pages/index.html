@@ -32,7 +32,9 @@
         id="mainForm"
         action="{% url 'results'%}"
         onsubmit="return validateForm()"
+        method="POST"
       >
+        {% csrf_token %}
         <div class="form-element" id="grid">
           <label for="grid">Сітка колон (L x B), м</label>
           <select id="grid">
